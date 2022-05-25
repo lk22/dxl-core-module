@@ -1,0 +1,16 @@
+{
+    "name": "leoknudsen/dxl-core",
+    "description": "Core package for danish xbox league plugins",
+    "authors": [
+        {
+            "name": "Leo Knudsen",
+            "email": "knudsenudvikling@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Dxl\\": "src/"
+        }
+    }
+}

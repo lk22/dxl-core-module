@@ -1,0 +1,11 @@
+.dxl.dxl-frontend-events-list-container .card {
+    background: green;
+    background: linear-gradient(90deg, green 0%, transparent 100%);
+    padding: 1rem;
+    color: #fff;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}

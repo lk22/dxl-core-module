@@ -1,0 +1,301 @@
+:root {
+    --success: #4cd137;
+    --danger: #e84118;
+    --warning: #fbc531;
+}
+
+.dashicons{
+    vertical-align: middle;
+    font-size: 16px;
+}
+
+.dxl {
+    padding: 2rem;
+}
+
+.dxl .header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 1.5rem;
+}
+
+.dxl .content{
+    padding-right: 1.5rem;
+}
+
+.dxl .content .divider {
+    margin: 10px 0px;
+}
+
+.dxl .content .details {
+    min-height: 300px;
+    width: auto;
+    padding: 2rem;
+    background:rgba(214, 212, 212, 0.2);
+    border: 1px solid rgba(214, 212, 212, 1);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.dxl .content .details .left-details,
+.dxl .content .details .right-details {
+    width: calc(100% / 2);
+}
+
+
+.flex {
+    display:flex;
+}
+
+.flex-wrap {
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.flex-nowrap {
+    display:flex;
+    flex-wrap: nowrap;
+}
+
+.gap-10 {
+    gap: 10px;
+}
+
+.gap-20 {
+    gap: 20px;
+}
+
+/*Alert component*/
+.alert {
+    height: auto;
+    width: auto;
+    padding: 10px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.alert.alert-danger{
+    background: var(--danger);
+    color: #fff;
+}
+
+.alert.alert-success {
+    background: var(--success);
+}
+
+.alert.alert-warning{
+    background: var(--warning);
+}
+
+.alert.alert-danger,
+.alert.alert-success,
+.alert.alert-warning{
+    color: #fff;
+}
+
+.hidden {
+    display:none;
+}
+
+/* label component */
+.status-label{
+    height: 40px;
+    background: #f1f1f1;
+    display:flex;
+    align-items: center;
+    padding-left: 1rem;
+    border-radius: 3px;
+    padding-right: 1rem;
+    width: max-content;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+.status-label.success{
+    background: var(--success); 
+    color: #fff;
+}
+
+.status-label.warning{
+    background: var(--warning);
+    color: #fff;
+}
+
+.status-label.danger{
+    background: var(--danger);
+    color:#fff;
+}
+.dxl .content .card {
+    width: 30%;
+}
+
+.dxl .content .card:hover {
+    box-shadow: 5px 2px 10px 0px green;
+    transition: box-shadow 0.2s ease-in-out;
+    -webkit-transition: box-shadow 0.2s ease-in-out;
+    -moz-transition: box-shadow 0.2s ease-in-out;
+    -ms-transition: box-shadow 0.2s ease-in-out;
+    -o-transition: box-shadow 0.2s ease-in-out;
+}
+
+.dxl .content .card:not(:hover) {
+    transition: box-shadow 0.2s ease-in-out;
+    -webkit-transition: box-shadow 0.2s ease-in-out;
+    -moz-transition: box-shadow 0.2s ease-in-out;
+    -ms-transition: box-shadow 0.2s ease-in-out;
+    -o-transition: box-shadow 0.2s ease-in-out;
+}
+
+.card .card-body{
+    min-height: 150px;
+}
+
+.card .card-header,
+.card .card-footer{
+    height: 50px;
+}
+
+.card .card-header{
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid green;
+}
+
+.card .card-footer{
+    padding-top: 0.5rem;
+}
+
+.modal{
+    position: fixed;
+    top: 50%;
+    left: 55%;
+    height: 600px;
+    transform: translate(-50%, -50%);
+    width: 66vw;
+    background-color: white;
+    padding: 5rem;
+    border-radius: 5px;
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    opacity: 1;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.2s;
+    overflow-y:scroll;
+}
+
+.modal.small-modal{
+    height: 200px;
+}
+
+.overlay{
+    position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.6);
+	backdrop-filter: blur(3px);
+	z-index: 5;
+}
+
+.modal.hidden{
+    opacity: 0;
+}
+
+.overlay.hidden{
+    display:none;
+}
+
+.show-modal{
+	font-size: 2rem;
+	font-weight: 600;
+	padding: 1.75rem 3.5rem;
+	margin: 5rem 2rem;
+	border: none;
+	background-color: #fff;
+	color: #444;
+}
+
+.modal .modal-header {
+    height: 25px;
+}
+
+.modal.small-modal .modal-body{
+    height: auto;
+}
+
+.modal .modal-body {
+    height: 500px;
+    border-bottom: 2px solid #000;
+    border-top: 2px solid #000;
+    margin: 20px 0px;
+    padding: 20px 0px;
+    overflow-y: scroll;
+    width: 100%;
+}
+
+.modal .form-control{
+    margin: 20px 0px;
+}
+
+.modal .form-control label{
+    padding-bottom: 20px;
+}
+
+.modal form {
+    display:flex;
+}
+
+.modal form.column {
+    flex-direction: column;;
+}
+
+.modal .left-form,
+.modal .modal-body form .left-form,
+.modal .right-form,
+.modal .modal-body form .right-form{
+    width: calc(100% / 2);
+}
+
+.modal .left-form {
+    padding-right: 0.5rem;
+}
+
+.accordion{
+    border: 2px solid green;
+    border-radius: 5px;
+    padding: 15px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.accordion .accordion-item .item-header {
+    border-bottom: 1px solid green;
+    margin: 10px 0px;
+    cursor:pointer;
+}
+
+.accordion .accordion-item .item-header:hover {
+    background:rgba(214, 212, 212, 0.2);
+    transition: ease-in-out 0.2s all;
+    -webkit-transition: ease-in-out 0.2s all;
+    -moz-transition: ease-in-out 0.2s all;
+    -ms-transition: ease-in-out 0.2s all;
+    -o-transition: ease-in-out 0.2s all;
+}
