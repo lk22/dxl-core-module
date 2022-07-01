@@ -20,4 +20,16 @@
         return admin_url('admin.php?page=' . $page);
     }
 
+    if( !function_exists('dxl_core_enqueue_scripts') )
+    {
+        function dxl_core_enqueue_scripts()
+        {
+            wp_enqueue_script('bootstrap5', get_template_directory_uri() . "/assets/js/dependencies/bootstrap.min.js", array('jquery'));
+            wp_enqueue_script('select2', get_template_directory_uri() . "/assets/js/dependencies/select2.min.js", array('jquery'));
+        }
+    }
+
+    add_action( 'admin_enqueue_scripts', 'dxl_core_enqueue_scripts' );
+
+
 ?>
