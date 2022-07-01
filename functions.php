@@ -24,8 +24,8 @@
     {
         function dxl_core_enqueue_scripts()
         {
-            wp_enqueue_script('bootstrap5', get_template_directory_uri() . "/assets/js/dependencies/bootstrap.min.js", array('jquery'));
-            wp_enqueue_script('select2', get_template_directory_uri() . "/assets/js/dependencies/select2.min.js", array('jquery'));
+            wp_enqueue_script('bootstrap5', plugin_dir_url(__FILE__) . "/src/admin/assets/js/dependencies/bootstrap.min.js", array('jquery'));
+            wp_enqueue_style('bootstrap5', plugin_dir_url(__FILE__) . "/src/admin/assets/css/dependencies/bootstrap.min.css");
         }
     }
 
