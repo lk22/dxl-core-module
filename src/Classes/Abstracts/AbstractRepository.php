@@ -46,15 +46,26 @@ if( !class_exists('AbstractRepository') )
          */
         public function __construct()
         {
-            $this->handler = $GLOBALS["wpdb"];
             $this->setHandler($GLOBALS["wpdb"]);
         }
 
+        /**
+         * Set repository handler
+         *
+         * @param $handler
+         * @return void
+         */
         public function setHandler($handler) 
         {
             $this->handler = $handler;
         }
 
+        /**
+         * set a new column to be handled as a primary identifier
+         *
+         * @param int $primaryIdentifier
+         * @return void
+         */
         public function setPrimaryIdentifier($primaryIdentifier)
         {
             $this->primaryIdentifier = $primaryIdentifier;
