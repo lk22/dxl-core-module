@@ -143,6 +143,7 @@ if( !class_exists('AbstractMailer') )
          * @return void
          */
         public abstract function send();
+        protected abstract function template();
     }
 }
 

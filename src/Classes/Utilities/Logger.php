@@ -55,7 +55,7 @@ if(!class_exists('Logger'))
 	    	}
 
 	    	touch(self::LOGFILE); 
-	    	return file_put_contents(self::LOGFILE, $logMmessage, FILE_APPEND);
+	    	return file_put_contents(self::LOGFILE, $logMessage, FILE_APPEND);
         }
 
         /**
@@ -68,10 +68,9 @@ if(!class_exists('Logger'))
          */
         public function logCronReport(string $message, $level = 4)
         {
-            global $current_user;
             $logLevel = $this->setLogLevel($level);
             
-            $logMessage = date("d-m-Y H:i:s", strtotime('now')) . " (" . $logLevel . ") " . $message "\r";
+            $logMessage = date("d-m-Y H:i:s", strtotime('now')) . " (" . $logLevel . ") " . $message . "\r";
 
             if( is_file(self::CRON_LOG_FILE) && file_exists(self::CRON_LOG_FILE) ) {
 	    		return file_put_contents(self::CRON_LOG_FILE, $logMessage, FILE_APPEND);
