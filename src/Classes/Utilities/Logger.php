@@ -47,8 +47,14 @@ if(!class_exists('Logger'))
         {
             global $current_user;
             $logLevel = $this->setLogLevel($level);
-            
-            $logMessage = date("d-m-Y H:i:s", strtotime('now')) . " (" . $logLevel . ") User: " . ($current_user->user_login) ? $current_user->user_login : '' . ", " . $message . " (dxl-" . $plugin . ")\r";
+
+            $logMessage = date("d-m-Y H:i:s", strtotime('now')) . " (" . $logLevel . ")";
+
+            if( $current_user->user_login ) {
+                $logMessage .= " " . $current_user->user_login;
+            }
+
+            $logMessage .= ", " . $message . " (dxl-" . $plugin . ")\r";
 
             if( is_file(self::LOGFILE) && file_exists(self::LOGFILE) ) {
 	    		return file_put_contents(self::LOGFILE, $logMessage, FILE_APPEND);
