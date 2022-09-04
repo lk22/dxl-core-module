@@ -30,24 +30,7 @@ if(!class_exists('Core'))
             add_action('admin_enqueue_scripts', [$this, 'enqueue_core_scripts']);
             $this->validate_requirements();
         }
-
-        // public function registerMenu()
-        // {
-        //     // add_menu_page(
-		// 	// 	'DanishXboxLeague',
-		// 	// 	'DXL Manager',
-		// 	// 	'manage_options',
-		// 	// 	'dxl-events'
-		// 	// );
-        // }
-
-        public function dxl_render_settings()
-        {
-            ?>
-                <h2>Test</h2>
-            <?php
-        }
-
+        
         public function enqueue_core_scripts()
         {
             wp_enqueue_script('dxl-toast-plugin', plugins_url('dxl-core/src/admin/assets/js/dependencies/toast.min.js'), array('jquery'));

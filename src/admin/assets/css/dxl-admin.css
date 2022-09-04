@@ -3,6 +3,9 @@
     --danger: #e84118;
     --warning: #fbc531;
 }
+body {
+    font-family: "Poppins", sans-serif;
+}
 
 .dashicons{
     vertical-align: middle;

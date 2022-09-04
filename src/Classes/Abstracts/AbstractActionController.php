@@ -2,9 +2,9 @@
 
 namespace Dxl\Classes\Abstracts;
 
-if( !class_exists('AbstractAction') )
+if( !class_exists('AbstractActionController') )
 {
-    abstract class AbstractAction 
+    abstract class AbstractActionController 
     {
         /**
          * action rules

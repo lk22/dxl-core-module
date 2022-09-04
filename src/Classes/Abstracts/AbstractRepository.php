@@ -280,7 +280,7 @@ if( !class_exists('AbstractRepository') )
          * @param [type] $id
          * @return void
          */
-        public function delete(int $id, ?array $fields, ?bool $isTrashable = false): bool
+        public function delete(int $id, ?array $fields = [], ?bool $isTrashable = false): bool
         {
             // if the row is trashable then update the time of the deletion of the data
             if( $isTrashable ) 
