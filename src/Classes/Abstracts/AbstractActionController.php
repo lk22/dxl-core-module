@@ -1,7 +1,7 @@
 <?php 
-
 namespace Dxl\Classes\Abstracts;
 
+include(ABSPATH . "wp-includes/pluggable.php");
 if( !class_exists('AbstractActionController') )
 {
     abstract class AbstractActionController 
@@ -55,7 +55,7 @@ if( !class_exists('AbstractActionController') )
          */
         public function validateRequest($requestModule) : bool
         {
-            $module = $_REQUEST[$requestModule];
+            $module = $this->data[$requestModule];
             foreach($module as $f => $field) 
             {
                 if( isset($this->rules[$f]) ) 
@@ -88,13 +88,9 @@ if( !class_exists('AbstractActionController') )
          */
         public function verify_nonce()
         {
-            if( ! isset($_REQUEST["dxl_core_nonce"]) && !wp_verify_nonce($_REQUEST["dxl_core_nonce"], 'dxl-core-nonce') )
-            {
-                return false;
-            }
-
-            return true;
+            return ( isset($this->data["dxl_core_nonce"]) && !\wp_verify_nonce($this->data["dxl_core_nonce"], 'dxl-core-nonce') ) ? false : true;
         }
+
 
         public function data() 
         {
@@ -109,7 +105,7 @@ if( !class_exists('AbstractActionController') )
          */
         protected function get($key) 
         {
-            return isset($_REQUEST[$key]) ? $_REQUEST[$key] : false;
+            return isset($this->data[$key]) ? $this->data[$key] : false;
         }
 
         /**
@@ -119,7 +115,7 @@ if( !class_exists('AbstractActionController') )
          * @return boolean
          */
         protected function has($key) {
-            return isset($_REQUEST[$key]) ? true : false;
+            return isset($this->data[$key]) ? true : false;
         }
 
         /**
