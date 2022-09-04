@@ -33,6 +33,19 @@ if( !class_exists('AbstractActionController') )
          * @return void
          */
         public abstract function registerGuestActions();
+
+        /**
+         * Abstract action controller
+         */
+        public function __construct() 
+        {
+            // verify nonce before continuing with performing action
+            $nonceVerified = $this->verify_nonce();
+            if( ! $nonceVerified ) 
+            {
+                wp_die(401 . ' Unauthorized' );
+            }
+        }
         
         /**
          * validating request
