@@ -49,29 +49,6 @@ body {
     width: calc(100% / 2);
 }
 
-
-.flex {
-    display:flex;
-}
-
-.flex-wrap {
-    display:flex;
-    flex-wrap: wrap;
-}
-
-.flex-nowrap {
-    display:flex;
-    flex-wrap: nowrap;
-}
-
-.gap-10 {
-    gap: 10px;
-}
-
-.gap-20 {
-    gap: 20px;
-}
-
 /*Alert component*/
 .alert {
     height: auto;
@@ -140,9 +117,6 @@ body {
 .status-label.danger{
     background: var(--danger);
     color:#fff;
-}
-.dxl .content .card {
-    width: 30%;
 }
 
 .dxl .content .card:hover {
