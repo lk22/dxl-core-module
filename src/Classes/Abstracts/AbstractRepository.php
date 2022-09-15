@@ -302,7 +302,7 @@ if( !class_exists('AbstractRepository') )
             return $this->handler
                 ->delete(
                     $this->handler->prefix . "" . $this->repository, 
-                    [$this->primaryIdentifier => $id]
+                    $where
                 );
         }
 

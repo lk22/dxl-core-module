@@ -6,12 +6,6 @@ if( !class_exists('AbstractActionController') )
 {
     abstract class AbstractActionController 
     {
-        /**
-         * action rules
-         *
-         * @var array
-         */
-        protected $rules = [];
 
         /**
          * Rendering manage views 
@@ -138,38 +132,6 @@ if( !class_exists('AbstractActionController') )
         protected function getUriKey($key) 
         {
             return isset($_GET[$key]) ? $_GET[$key] : "";
-        }
-
-        /**
-         * validating required rule of each request
-         *
-         * @param string $field
-         * @return void
-         */
-        private function validateRequired(string $field) : bool
-        {
-            if( $this->rules[$field]["rule"] == "required" )
-            {
-                return true;
-            }
-
-            return false;
-        }
-
-        /**
-         * validating requst field is a number
-         *
-         * @param string $field
-         * @return boolean
-         */
-        private function validateNumber(string $field) : bool
-        {
-            if( $this->rules[$field]["rule"] == "number" )
-            {
-                return true;
-            }
-
-            return false;
         }
     }
 }
