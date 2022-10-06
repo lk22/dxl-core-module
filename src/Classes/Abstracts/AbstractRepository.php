@@ -190,7 +190,8 @@ if( !class_exists('AbstractRepository') )
          */
         public function descending($column)
         {
-            $this->query .= " ORDER BY " . $column . " DESC";
+            $this->query .= " ORDER BY " . $column . " DESC ";
+            return $this;
         }
 
         public function debug() {
