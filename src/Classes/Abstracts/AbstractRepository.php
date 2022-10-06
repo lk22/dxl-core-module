@@ -169,6 +169,7 @@ if( !class_exists('AbstractRepository') )
         public function orderBy($column)
         {
             $this->query .= " ORDER BY " . $column . " " . $this->defaultOrder;
+            return $this;
         }
 
         /**
@@ -180,6 +181,7 @@ if( !class_exists('AbstractRepository') )
         public function ascending($column)
         {
             $this->query .= " ORDER BY " . $column . " ASC";
+            return $this;
         }
 
         /**
