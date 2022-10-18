@@ -86,4 +86,43 @@ const DXLCore = {
 
         window.location.href = newUrl;
     },
+
+    /**
+     * popping up a warning notification
+     */
+    getAlert: (alert, callback) => {
+        bootbox.alert("This is a test", callback)
+    },
+
+    /**
+     * Rendering bootbox confirm dialog
+     * @param {*} confirm 
+     * @param {*} callback 
+     * @param {*} hasButtons 
+     */
+    getConfirm: (confirm, callback, hasButtons) => {
+        bootbox.confirm({
+            message: alert,
+        })
+    },
+
+    /**
+     * Get bootbox prompt dialog
+     * @param {} prompt 
+     * @param {*} callback 
+     */
+    getPrompt: (prompt, callback) => {
+        bootbox.prompt({
+            title: prompt,
+            callback: callback
+        })
+    },
+
+    /**
+     * render an custom dialog based on given options
+     * @param Object options 
+     */
+    getCustomDialog: (options) => {
+        bootbox.dialog(options);
+    }
 }

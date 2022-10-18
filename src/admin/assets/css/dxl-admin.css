@@ -180,3 +180,9 @@ body {
     -ms-transition: ease-in-out 0.2s all;
     -o-transition: ease-in-out 0.2s all;
 }
+
+.bootbox .modal-dialog {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
