@@ -25,8 +25,8 @@
         function dxl_core_enqueue_scripts()
         {
             wp_enqueue_script('bootstrap5', plugin_dir_url(__FILE__) . "/src/admin/assets/js/dependencies/bootstrap.min.js", array('jquery'));
-            wp_enqueue_script('bootbox', plugin_dir_url(__FILE__) . "/src/admin/assets/js/dependencies/bootbox.all.min.js", array('jquery'));
             wp_enqueue_style('bootstrap5', plugin_dir_url(__FILE__) . "/src/admin/assets/css/dependencies/bootstrap.min.css");
+            wp_enqueue_script('bootbox', plugin_dir_url(__FILE__) . "/src/admin/assets/js/dependencies/bootbox.all.min.js", array('jquery'));
         }
     }
 
