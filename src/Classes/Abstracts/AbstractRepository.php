@@ -285,7 +285,7 @@ if( !class_exists('AbstractRepository') )
          */
         public function delete(int $id, ?array $fields = [], ?bool $isTrashable = false): bool
         {
-            // if the row is trashable then update the time of the deletion of the data
+            // if the row is trashable then update the time of the deletion of the data // todo
             if( $isTrashable ) 
             {
                 return $this->handler->update($this->handler->prefix . $this->repository, ["deleted_at" => time()], [$this->primaryIdentifier => $id]);

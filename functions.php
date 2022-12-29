@@ -32,5 +32,12 @@
 
     add_action( 'admin_enqueue_scripts', 'dxl_core_enqueue_scripts' );
 
+    // write a function to set from name and from email
+    function dxl_core_set_from_name($name)
+    {
+        return "Danish Xbox League";
+    }
+    add_filter('wp_mail_from_name', 'dxl_core_set_from_name');
+
 
 ?>
