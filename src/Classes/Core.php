@@ -29,6 +29,8 @@ if(!class_exists('Core'))
             // add_action('admin_init', [$this, 'registerMenu']);
             add_action('admin_enqueue_scripts', [$this, 'enqueue_core_scripts']);
             $this->validate_requirements();
+
+            $this->initialize_settings_page(); // ACF settings page
         }
         
         public function enqueue_core_scripts()
@@ -74,6 +76,19 @@ if(!class_exists('Core'))
             );
 
             // printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
+        }
+
+        public function initialize_settings_page()
+        {
+            if( function_exists('acf_add_options_page') ) {
+                acf_add_options_page([
+                    'page_title' => 'DXL Indstillinger',
+                    'menu_title' => 'DXL Indstillinger',
+                    'menu_slug' => 'dxl-core',
+                    'capability' => 'edit_posts',
+                    'redirect' => false
+                ]);
+            }
         }
 
         public function response($module, $data, $format = JSON_PRETTY_PRINT) {

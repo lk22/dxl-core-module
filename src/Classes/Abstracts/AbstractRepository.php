@@ -103,6 +103,19 @@ if( !class_exists('AbstractRepository') )
         }
 
         /**
+         * Select Json column from database table
+         *
+         * @param [type] $column
+         * @param string $path
+         * @return void
+         */
+        public function selectJsonColumn($column, $path = '$') {
+            // $this->query = "SELECT JSON_EXTRACT(" . $column .", $path) FROM " . $this->handler->prefix . "" .$this->repository;
+            return $this->handler->get_row(
+                "SELECT JSON_EXTRACT(" . $column .", $path) FROM " . $this->handler->prefix . "" .$this->repository
+            );
+        }
+        /**
          * Undocumented function
          *
          * @param [type] $field
