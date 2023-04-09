@@ -338,13 +338,6 @@ if( !class_exists('AbstractRepository') )
                     [$this->primaryIdentifier => $identifier]
                 );
         }
-
-        // public function join(AbstractRepository $repository) 
-        // {
-        //     $this->query = "SELECT " . $this->repository . ".*," . $this->repository . "." . $this->primaryIdentifier . "," .$repository->repository . ".*, "
-        // }
-
-        
     }
 }
 
