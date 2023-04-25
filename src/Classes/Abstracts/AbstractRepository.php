@@ -95,7 +95,7 @@ if( !class_exists('AbstractRepository') )
 
             if( is_array($fields) ) 
             {
-                $fields = implode(', ', $fields);
+                $fields = (count($fields) > 1 ) ? implode(', ', $fields) : $fields[0];
             }
 
             $this->query .= $fields . " FROM " . $this->handler->prefix . "" .$this->repository . " ";
