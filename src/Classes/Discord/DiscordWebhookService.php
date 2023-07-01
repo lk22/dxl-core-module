@@ -62,7 +62,7 @@ if ( ! class_exists('DiscordWebhookService') ) {
      * @return void
      */
     private function send($data) {
-      $curl = curl_init("localhost:3000/discord");
+      $curl = curl_init("46.105.54.234:8027/discord");
       // $curl = curl_init($this->webhook_url);
       curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'POST');
       curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
