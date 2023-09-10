@@ -20,7 +20,7 @@
       }
 
       public static function getMonths() {
-        return ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        return ["Januar", "Februar", "Marts", "April", "Maj", "Juni", "Juli", "August", "September", "Oktober", "November", "December"];
       }
 
       public static function getMonthDays($daysInMonth) {
