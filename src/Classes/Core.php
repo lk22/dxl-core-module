@@ -19,7 +19,7 @@ if(!class_exists('Core'))
         /**
          * required php version
          */
-        const REQUIRED_PHP_VERSION = "7.4";
+        const REQUIRED_PHP_VERSION = "8.0";
 
         /**
          * Construct core plugin

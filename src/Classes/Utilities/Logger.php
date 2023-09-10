@@ -16,9 +16,9 @@ if(!class_exists('Logger'))
         /**
          * specified path to logfile
          */
-        const LOGFILE = ABSPATH . "wp-content/plugins/dxl-core/dxl.log";
+        const LOGFILE = ABSPATH . "wp-content/plugins/dxl-manager/dxl.log";
 
-        const CRON_LOG_FILE = ABSPATH . "wp-content/plugins/dxl-core/dxl-cron.log";
+        const CRON_LOG_FILE = ABSPATH . "wp-content/plugins/dxl-manager/dxl-cron.log";
 
         /**
          * return a new or existing instance of the logger utility
@@ -103,7 +103,6 @@ if(!class_exists('Logger'))
                 case 3: 
                     return "API";
                     break;
-
                 case 4: 
                     return "CRON";
                     break;
