@@ -16,7 +16,8 @@
        *
        * @return CalendarUtility
        */
-      public static function getInstance(): CalendarUtility {
+      public static function getInstance(): CalendarUtility 
+      {
         if ( ! self::$instance ) {
           return new CalendarUtility();
         }
@@ -29,7 +30,8 @@
        *
        * @return array
        */
-      public static function getWeekDays(): array {
+      public static function getWeekDays(): array 
+      {
         return ['Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag', 'Søndag'];
       }
 
@@ -38,7 +40,8 @@
        *
        * @return array
        */
-      public static function getMonths(): array {
+      public static function getMonths(): array 
+      {
         return ["Januar", "Februar", "Marts", "April", "Maj", "Juni", "Juli", "August", "September", "Oktober", "November", "December"];
       }
 
@@ -46,9 +49,10 @@
        * get days of a specified month
        *
        * @param [type] $daysInMonth
-       * @return void
+       * @return array
        */
-      public static function getMonthDays($daysInMonth) {
+      public static function getMonthDays($daysInMonth): array 
+      {
         $days = [];
 
         for ($i = 1; $i <= $daysInMonth; $i++) {
