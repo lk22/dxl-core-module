@@ -5,9 +5,18 @@
 
   if ( ! class_exists('CalendarUtility') ) {
     class CalendarUtility {
+
+      /**
+       * Instance of the class
+       */
       public static $instance;
 
-      public static function getInstance() {
+      /**
+       * Get utility instance
+       *
+       * @return CalendarUtility
+       */
+      public static function getInstance(): CalendarUtility {
         if ( ! self::$instance ) {
           return new CalendarUtility();
         }
@@ -15,14 +24,30 @@
         return self::$instance;
       }
 
-      public static function getWeekDays() {
+      /**
+       * Get days of the week
+       *
+       * @return array
+       */
+      public static function getWeekDays(): array {
         return ['Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag', 'Søndag'];
       }
 
-      public static function getMonths() {
+      /**
+       * get months of the year
+       *
+       * @return array
+       */
+      public static function getMonths(): array {
         return ["Januar", "Februar", "Marts", "April", "Maj", "Juni", "Juli", "August", "September", "Oktober", "November", "December"];
       }
 
+      /**
+       * get days of a specified month
+       *
+       * @param [type] $daysInMonth
+       * @return void
+       */
       public static function getMonthDays($daysInMonth) {
         $days = [];
 
@@ -31,6 +56,31 @@
         }
 
         return $days;
+      }
+
+      /**
+       * Get interval period
+       *
+       * @param [type] $start
+       * @param [type] $end
+       * @param [type] $interval
+       * @param [type] $modify
+       * @return \DatePeriod
+       */
+      public static function getIntervaPeriodl($start, $end, $interval, $modify = ""): \DatePeriod
+      {
+        $startDate = new \DateTime($start);
+        $endDate = new \DateTime($end);
+        $intervalDefintion = new \DateInterval($interval);
+
+        if ( ! empty($modify) ) {
+          $modifiedEndDate = $endDate->modify($modify);
+        } else {
+          $modifiedEndDate = $endDate;
+        }
+        $period = new \DatePeriod($startDate, $intervalDefinition, $modifiedEndDate);
+
+        return $period;
       }
     }
   }
