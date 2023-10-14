@@ -71,7 +71,7 @@
        * @param [type] $modify
        * @return \DatePeriod
        */
-      public static function getIntervaPeriodl($start, $end, $interval, $modify = ""): \DatePeriod
+      public static function getIntervalPeriod($start, $end, $interval, $modify = ""): \DatePeriod
       {
         $startDate = new \DateTime($start);
         $endDate = new \DateTime($end);
