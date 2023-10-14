@@ -40,9 +40,15 @@
        *
        * @return array
        */
-      public static function getMonths(): array 
+      public static function getMonths($year): array 
       {
-        return ["Januar", "Februar", "Marts", "April", "Maj", "Juni", "Juli", "August", "September", "Oktober", "November", "December"];
+        $months = [];
+
+        for ($i = 1; $i <= 12; $i++) {
+          $months[] = date("F", mktime(0, 0, 0, $i, 1, $year));
+        }
+
+        return $months;
       }
 
       /**
@@ -82,7 +88,9 @@
         } else {
           $modifiedEndDate = $endDate;
         }
-        $period = new \DatePeriod($startDate, $intervalDefinition, $modifiedEndDate);
+
+        $period = new \DatePeriod($startDate, $intervalDefintion, $modifiedEndDate);
+        // $period = new \DatePeriod($start, $intervalDefintion, $modifiedEndDate);
 
         return $period;
       }
