@@ -2,8 +2,7 @@ name: Deploy to Simply.com
 
 on:
   push:
-    branches:
-      - master
+    branches: [staging, master]
 
 jobs:
   deploy:
