@@ -4,7 +4,7 @@ const DXLCore = {
      * Request data for all initiable requests 
      */
     request: {
-        url: ajaxurl, // request url
+        url: ajaxurl, // request url 
 
         // request data
         data: {
