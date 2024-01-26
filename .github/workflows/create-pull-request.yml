@@ -11,18 +11,15 @@ jobs:
         steps:
             - name: Checkout code
               uses: actions/checkout@v2
+
+            - name: Creating pull request
+              run: echo "Creating pull request for staging branch"
             
-            - name: Create Pull request agains master branch
-              uses: peter-evans/create-pull-request@v3
-              with:
-                token: ${{ secrets.GITHUB_TOKEN }}
-                commit-message: ${{ github.event.head_commit.message }}
-                title: ${{ github.event.head_commit.message }}
-                body: 'This is an automated pull request from staging to master'
-                branch: staging
-                base: master
-                branch-suffix: staging
-                labels: staging
-                assignees: ${{ github.actor }}
-                reviewers: ${{ github.actor }}
+            - name: Pull request staging - master
+              uses: Poorva17/create-pr-action@v2.0
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                HEAD_BRANCH: staging
+                BASE_BRANCH: master
+                PR_TITLE: "staging - master: ${{ github.event.head_commit.message }}"
               
