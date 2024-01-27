@@ -22,4 +22,3 @@ jobs:
                 HEAD_BRANCH: staging
                 BASE_BRANCH: master
                 PR_TITLE: "staging - master: ${{ github.event.head_commit.message }}"
-              
